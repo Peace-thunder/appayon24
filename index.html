@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appayon - Helping People in Need</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header img {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+    border-radius: 100%;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+}
+
+nav a {
+    color: white;
+    padding: 1rem;
+    text-decoration: none;
+    text-align: center;
+}
+
+nav a:hover {
+    background-color: #575757;
+}
+
+.container {
+    flex: 1;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+section {
+    margin-bottom: 1rem;
+}
+
+.services, .contact {
+    background-color: white;
+    padding: 2rem;
+    margin: 1rem 0;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    margin-top: 20px;
+}
+
+.gallery-photo {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: white;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.comment {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.comment-name {
+    font-weight: bold;
+}
+
+.comment-text {
+    margin-top: 5px;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="/Appayon1.png" alt="Appayon Logo">
+        <h1>Appayon</h1>
+        <p>Helping People in Need by Providing Food</p>
+    </header>
+    <nav>
+        <a href="#" onclick="showSection('home')">Home</a>
+        <a href="#" onclick="showSection('about')">About</a>
+        <a href="#" onclick="showSection('services')">Services</a>
+        <a href="#" onclick="showSection('photos')">Photo Gallery</a>
+        <a href="#" onclick="showSection('comments')">Comments</a>
+        <a href="#" onclick="showSection('contact')">Contact</a>
+    </nav>
+    <div class="container">
+        <section id="home">
+            <img src="/Appayon1.png" alt="Appayon Logo" style="display: block; margin: 0 auto 20px; width: 150px; height: auto;">
+            <h2>Welcome to Appayon</h2>
+            <p>We are dedicated to helping people in need by providing food. Our mission is to ensure that no one goes hungry.</p>
+        </section>
+        <section id="about" class="hidden">
+            <h2>About Us</h2>
+            <p>Appayon was founded with the belief that everyone deserves access to nutritious food. We work with local communities and volunteers to distribute meals to those in need.</p>
+        </section>
+        <section id="services" class="hidden">
+            <h2>Our Services</h2>
+            <div class="services">
+                <h3>Food Distribution</h3>
+                <p>We organize regular food drives and distribution events to provide meals to individuals and families in need.</p>
+            </div>
+            <div class="services">
+                <h3>Community Kitchens</h3>
+                <p>Our community kitchens offer hot meals to anyone who needs them, fostering a sense of community and support.</p>
+            </div>
+            <div class="services">
+                <h3>Volunteer Opportunities</h3>
+                <p>Join us as a volunteer to help with food collection, preparation, and distribution. Your support makes a big difference!</p>
+            </div>
+        </section>
+        <section id="photos" class="hidden">
+            <h2>Photo Gallery</h2>
+            <div class="photo-gallery">
+                <img src="/img1.jpeg" alt="Appayon Event" class="gallery-photo">
+                <img src="/img2.jpeg" alt="Appayon Event" class="gallery-photo">
+                <img src="/img3.jpeg" alt="Appayon Event" class="gallery-photo">
+                <img src="/img4.jpeg" alt="Appayon Event" class="gallery-photo">
+                <img src="/img5.jpeg" alt="Appayon Event" class="gallery-photo">
+                <img src="/img6.jpeg" alt="Appayon Event" class="gallery-photo">
+            </div>
+        </section>
+        <section id="comments" class="hidden">
+            <h2>Leave a Comment</h2>
+            <form id="commentForm">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="comment">Comment:</label>
+                    <textarea id="comment" name="comment" required></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+            <p id="commentMessage" style="color: green; display: none;">Thank you for your comment!</p>
+            <div id="commentList"></div>
+        </section>
+        <section id="contact" class="hidden">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or would like to get involved, please reach out to us:</p>
+            <div class="contact">
+                <h3>Email</h3>
+                <p>info@appayon.org</p>
+            </div>
+            <div class="contact">
+                <h3>Phone</h3>
+                <p>(123) 456-7890</p>
+            </div>
+            <div class="contact">
+                <h3>Address</h3>
+                <p>123 Helping Hand Street, Kindness City, CA 12345</p>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 Appayon. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+
+        document.getElementById('commentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const comment = document.getElementById('comment').value;
+
+            const formData = {
+                name: name,
+                email: email,
+                comment: comment
+            };
+
+            // Get comments from localStorage
+            let comments = JSON.parse(localStorage.getItem('comments')) || [];
+
+            // Add new comment to comments array
+            comments.push(formData);
+
+            // Save comments back to localStorage
+            localStorage.setItem('comments', JSON.stringify(comments));
+
+            // Show success message
+            document.getElementById('commentMessage').style.display = 'block';
+
+            // Reset the form
+            document.getElementById('commentForm').reset();
+
+            // Display comments
+            displayComments();
+        });
+
+        function displayComments() {
+            const commentList = document.getElementById('commentList');
+            commentList.innerHTML = '';
+
+            // Get comments from localStorage
+            const comments = JSON.parse(localStorage.getItem('comments')) || [];
+
+            // Loop through comments and display them
+            comments.forEach(comment => {
+                const commentDiv = document.createElement('div');
+                commentDiv.classList.add('comment');
+                
+                const commentName = document.createElement('div');
+                commentName.classList.add('comment-name');
+                commentName.textContent = comment.name;
+                
+                const commentText = document.createElement('div');
+                commentText.classList.add('comment-text');
+                commentText.textContent = comment.comment;
+                
+                commentDiv.appendChild(commentName);
+                commentDiv.appendChild(commentText);
+                commentList.appendChild(commentDiv);
+            });
+        }
+
+        // Display comments when page loads
+        window.onload = displayComments;
+    </script>
+</body>
+</html>
